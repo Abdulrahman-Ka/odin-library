@@ -3,8 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Library</title>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header><h1>Libraray</h1></header>
+    <table id="booksTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Pages</th>
+          <th>Read</th>
+          <!-- <th>Delete</th> -->
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button type="button" id="openDialog" class="main-button">New Book</button>
+    <div class="dialog" id="myDialog">
+      <div class="dialog-content">
+        <span class="close" id="closeDialog">&times;</span>
+        <h3>Add New Book</h3>
+        <form onsubmit="addBookToLibrary(); return false" method="post">
+          <label for="input1">Title</label>
+          <input type="text" id="input1" name="input1" required />
+          <br />
+
+          <label for="input2">Author</label>
+          <input type="text" id="input2" name="input2" required />
+          <br />
+
+          <label for="input3">Pages</label>
+          <input type="number" id="input3" name="input3" required />
+          <br />
+          <div class="radio-group">
+            <label class="radio-label">
+              <input
+                type="radio"
+                class="radio-input"
+                name="input4"
+                value="true"
+                aria-label="true"
+              />
+              <span class="radio-custom"></span>
+              true
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                name="input4"
+                class="radio-input"
+                aria-label="false"
+                value="false"
+              />
+              <span class="radio-custom"></span>
+              false
+            </label>
+          </div>
+          <input type="submit" class="main-button" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
