@@ -71,6 +71,14 @@ function displayBooks() {
     checkbox.id = "myCheckbox";
     cell5.appendChild(checkbox);
 
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        cell4.textContent = "true";
+      } else {
+        cell4.textContent = "false";
+      }
+    });
+
     if (book.read === true) {
       checkbox.checked = true;
     } else {
@@ -80,13 +88,6 @@ function displayBooks() {
     cell2.innerHTML = book.author;
     cell3.innerHTML = book.pages;
     cell4.innerHTML = book.read;
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        cell4.textContent = "true";
-      } else {
-        cell4.textContent = "false";
-      }
-    });
   });
   if (tableBody.children.length === 0) {
     document.getElementById("booksTable").style.display = "none";
